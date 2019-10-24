@@ -14,6 +14,8 @@ metadata:
     chart: {{ template "dex-k8s-authenticator.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+  annotations:
+    configmap.reloader.stakater.com/reload: "konvoyconfig-{{ .Release.Namespace }}"
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -28,7 +30,6 @@ spec:
         env: {{ .Values.global.deployEnv }}
         release: {{ .Release.Name }}
       annotations:
-        configmap.reloader.stakater.com/reload: "konvoyconfig-{{ .Release.Namespace }}"
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
     spec:
 {{- if .Values.initContainers }}

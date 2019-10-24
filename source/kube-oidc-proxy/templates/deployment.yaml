@@ -7,6 +7,8 @@ metadata:
   name: {{ include "kube-oidc-proxy.fullname" . }}
   labels:
 {{ include "kube-oidc-proxy.labels" . | indent 4 }}
+  annotations:
+    configmap.reloader.stakater.com/reload: "konvoyconfig-{{ .Release.Namespace }}"
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -18,8 +20,6 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "kube-oidc-proxy.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
-      annotations:
-        configmap.reloader.stakater.com/reload: "konvoyconfig-{{ .Release.Namespace }}"
     spec:
       serviceAccountName: {{ include "kube-oidc-proxy.fullname" . }}
       {{- if .Values.initContainers }}

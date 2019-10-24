@@ -3,9 +3,9 @@ entries:
   dex:
   - apiVersion: v1
     appVersion: 2.17.0
-    created: "2019-10-24T15:11:04.35179+02:00"
+    created: "2019-10-24T15:57:34.189967+02:00"
     description: CoreOS Dex
-    digest: ddf72e7324a87285d303f0e1f31a1d1cce3667f778969aee785f2ebeaa37dd58
+    digest: 260becd5f15374b58818b1230c3ae2e87237fd7f23fb03a8811771a1cbe3f964
     home: https://github.com/dexidp/dex/
     icon: https://github.com/dexidp/dex/raw/master/Documentation/logos/dex-glyph-color.png
     keywords:
@@ -25,9 +25,9 @@ entries:
   dex-k8s-authenticator:
   - apiVersion: v1
     appVersion: v1.1.1
-    created: "2019-10-24T15:11:04.352704+02:00"
+    created: "2019-10-24T15:57:34.190926+02:00"
     description: Authenticator for using Dex with Kubernetes
-    digest: da7460bed8275da78e591bc6aaf810aadb01dc0d95e1926f6bb014e7895a15bf
+    digest: 9f7f6ae894b218a45e56d44fedf3d8807aa20ec1e788e9762e8332b1e2efe0cf
     home: https://github.com/mesosphere/charts
     maintainers:
     - email: mhrabovcin.c@mesosphere.com
@@ -43,9 +43,9 @@ entries:
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.1.1
-    created: "2019-10-24T15:11:04.353255+02:00"
+    created: "2019-10-24T15:57:34.191386+02:00"
     description: A Helm chart for kube-oidc-proxy
-    digest: 13b5c82177f9287805775270a9a5bacc0423effea644dd29a7fd3945f4c2aa13
+    digest: f0d27fd9d2123b90c81f9e20b0ebdd6679708fd6548177efe0c4d75b2a7fbfda
     home: https://github.com/mesosphere/charts
     maintainers:
     - email: mhrabovcin.c@d2iq.com
@@ -58,13 +58,44 @@ entries:
     urls:
     - https://mhrabovcin.github.io/charts-test/kube-oidc-proxy-0.1.7.tgz
     version: 0.1.7
+  traefik:
+  - apiVersion: v1
+    appVersion: 1.7.12
+    created: "2019-10-24T15:57:34.192303+02:00"
+    description: A Traefik based Kubernetes ingress controller with Let's Encrypt
+      support
+    digest: 10e29f20a5e0071e311ccdc5fca9029881d56b129053929d97c9596209680bfd
+    engine: gotpl
+    home: https://traefik.io/
+    icon: https://docs.traefik.io/img/traefik.logo.png
+    keywords:
+    - traefik
+    - ingress
+    - acme
+    - letsencrypt
+    maintainers:
+    - email: kent.rancourt@microsoft.com
+      name: krancour
+    - email: emile@vauge.com
+      name: emilevauge
+    - email: daniel.tomcej@gmail.com
+      name: dtomcej
+    - email: ludovic@containo.us
+      name: ldez
+    name: traefik
+    sources:
+    - https://github.com/containous/traefik
+    - https://github.com/helm/charts/tree/master/stable/traefik
+    urls:
+    - https://mhrabovcin.github.io/charts-test/traefik-1.72.7.tgz
+    version: 1.72.7
   traefik-forward-auth:
   - apiVersion: v1
     appVersion: latest
-    created: "2019-10-24T15:11:04.353596+02:00"
+    created: "2019-10-24T15:57:34.192641+02:00"
     description: Minimal forward authentication service that provides OIDC based login
       and authentication for the traefik reverse proxy
-    digest: a6e0e36ebef319c12946051229f77fbb6c5d4e459a881e6370b038c080d09da7
+    digest: 83b50c46259526f9a6c2e3679bb6ba58bada38c3ed6df69e2e1ea82c75a63235
     home: https://github.com/mesosphere/traefik-forward-auth
     keywords:
     - traefik-forward-auth
@@ -77,4 +108,4 @@ entries:
     urls:
     - https://mhrabovcin.github.io/charts-test/traefik-forward-auth-0.2.7.tgz
     version: 0.2.7
-generated: "2019-10-24T15:11:04.35086+02:00"
+generated: "2019-10-24T15:57:34.188992+02:00"

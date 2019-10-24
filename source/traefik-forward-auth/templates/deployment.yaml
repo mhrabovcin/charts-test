@@ -7,6 +7,8 @@ metadata:
     helm.sh/chart: {{ include "traefik-forward-auth.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
+  annotations:
+    configmap.reloader.stakater.com/reload: "konvoyconfig-{{ .Release.Namespace }}"
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -18,8 +20,6 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "traefik-forward-auth.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
-      annotations:
-        configmap.reloader.stakater.com/reload: "konvoyconfig-{{ .Release.Namespace }}"
     spec:
 {{- if .Values.initContainers }}
       initContainers:
