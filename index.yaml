@@ -1,0 +1,80 @@
+apiVersion: v1
+entries:
+  dex:
+  - apiVersion: v1
+    appVersion: 2.17.0
+    created: "2019-10-24T15:11:04.35179+02:00"
+    description: CoreOS Dex
+    digest: ddf72e7324a87285d303f0e1f31a1d1cce3667f778969aee785f2ebeaa37dd58
+    home: https://github.com/dexidp/dex/
+    icon: https://github.com/dexidp/dex/raw/master/Documentation/logos/dex-glyph-color.png
+    keywords:
+    - dex
+    - oidc
+    maintainers:
+    - email: Kevin.Fox@pnnl.gov
+      name: kfox1111
+    - email: shane.starcher@gmail.com
+      name: sstarcher
+    - email: pete.brown@powerhrg.com
+      name: rendhalver
+    name: dex
+    urls:
+    - https://mhrabovcin.github.io/charts-test/dex-1.6.10.tgz
+    version: 1.6.10
+  dex-k8s-authenticator:
+  - apiVersion: v1
+    appVersion: v1.1.1
+    created: "2019-10-24T15:11:04.352704+02:00"
+    description: Authenticator for using Dex with Kubernetes
+    digest: da7460bed8275da78e591bc6aaf810aadb01dc0d95e1926f6bb014e7895a15bf
+    home: https://github.com/mesosphere/charts
+    maintainers:
+    - email: mhrabovcin.c@mesosphere.com
+      name: mhrabovcin
+    - email: jrodriguez@d2iq.com
+      name: jr0d
+    name: dex-k8s-authenticator
+    sources:
+    - https://github.com/mintel/dex-k8s-authenticator
+    urls:
+    - https://mhrabovcin.github.io/charts-test/dex-k8s-authenticator-1.1.12.tgz
+    version: 1.1.12
+  kube-oidc-proxy:
+  - apiVersion: v1
+    appVersion: v0.1.1
+    created: "2019-10-24T15:11:04.353255+02:00"
+    description: A Helm chart for kube-oidc-proxy
+    digest: 13b5c82177f9287805775270a9a5bacc0423effea644dd29a7fd3945f4c2aa13
+    home: https://github.com/mesosphere/charts
+    maintainers:
+    - email: mhrabovcin.c@d2iq.com
+      name: mhrabovcin
+    - email: jrodriguez@d2iq.com
+      name: jr0d
+    name: kube-oidc-proxy
+    sources:
+    - https://github.com/jetstack/kube-oidc-proxy
+    urls:
+    - https://mhrabovcin.github.io/charts-test/kube-oidc-proxy-0.1.7.tgz
+    version: 0.1.7
+  traefik-forward-auth:
+  - apiVersion: v1
+    appVersion: latest
+    created: "2019-10-24T15:11:04.353596+02:00"
+    description: Minimal forward authentication service that provides OIDC based login
+      and authentication for the traefik reverse proxy
+    digest: a6e0e36ebef319c12946051229f77fbb6c5d4e459a881e6370b038c080d09da7
+    home: https://github.com/mesosphere/traefik-forward-auth
+    keywords:
+    - traefik-forward-auth
+    - traefik
+    - oauth
+    maintainers:
+    - email: jgiddy@mesosphere.com
+      name: jongiddy
+    name: traefik-forward-auth
+    urls:
+    - https://mhrabovcin.github.io/charts-test/traefik-forward-auth-0.2.7.tgz
+    version: 0.2.7
+generated: "2019-10-24T15:11:04.35086+02:00"
