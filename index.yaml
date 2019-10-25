@@ -3,9 +3,9 @@ entries:
   dex:
   - apiVersion: v1
     appVersion: 2.17.0
-    created: "2019-10-25T12:04:31.462595+02:00"
+    created: "2019-10-25T12:27:44.929199+02:00"
     description: CoreOS Dex
-    digest: 008e24cb2456d96d0ebb3a7bbacc51b85172fa536faa6cce0e01fbb87b6b8ee0
+    digest: b4ac636881ab8286a6bac01e1f3ea99271759d86fe29224032cfcb92e3374f28
     home: https://github.com/dexidp/dex/
     icon: https://github.com/dexidp/dex/raw/master/Documentation/logos/dex-glyph-color.png
     keywords:
@@ -25,9 +25,9 @@ entries:
   dex-k8s-authenticator:
   - apiVersion: v1
     appVersion: v1.1.1
-    created: "2019-10-25T12:04:31.46374+02:00"
+    created: "2019-10-25T12:27:44.930336+02:00"
     description: Authenticator for using Dex with Kubernetes
-    digest: cec581f7eb69d5a94b613a569d8f5e3bee7a41fc67deb77c1d285d8fdcbc5f04
+    digest: 8fc41af526dc3549b04545bb33eb2c37ce2aac1d576fdaa7918207a6f74b2b12
     home: https://github.com/mesosphere/charts
     maintainers:
     - email: mhrabovcin.c@mesosphere.com
@@ -43,9 +43,9 @@ entries:
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.1.1
-    created: "2019-10-25T12:04:31.464237+02:00"
+    created: "2019-10-25T12:27:44.93117+02:00"
     description: A Helm chart for kube-oidc-proxy
-    digest: e64c40089558848bc025b1c5e430fac74e7bce28ace0f4af32ffce50fea4cabd
+    digest: 4a3f3abd9e5ac7f7c1d58dc56cbf8600917eafd44a43ab20c10018317957cfdd
     home: https://github.com/mesosphere/charts
     maintainers:
     - email: mhrabovcin.c@d2iq.com
@@ -61,10 +61,10 @@ entries:
   traefik:
   - apiVersion: v1
     appVersion: 1.7.12
-    created: "2019-10-25T12:04:31.465215+02:00"
+    created: "2019-10-25T12:27:44.932143+02:00"
     description: A Traefik based Kubernetes ingress controller with Let's Encrypt
       support
-    digest: 89c165aef00c17ab9dedd74f5c1d7984e12caebaa4c566831135d4acc3d1ed68
+    digest: edb63b080cfcc64f036b9b111510848e056f7c8779fe23b9c081f617c71428e9
     engine: gotpl
     home: https://traefik.io/
     icon: https://docs.traefik.io/img/traefik.logo.png
@@ -92,10 +92,10 @@ entries:
   traefik-forward-auth:
   - apiVersion: v1
     appVersion: latest
-    created: "2019-10-25T12:04:31.465568+02:00"
+    created: "2019-10-25T12:27:44.932551+02:00"
     description: Minimal forward authentication service that provides OIDC based login
       and authentication for the traefik reverse proxy
-    digest: 7b2e65726d703a935d235ddaf61fa8769a0726ae5896971505c3ddfec0f02823
+    digest: a880141233c347c04e0b26d7d4157f52e155c327bd4833ca3c7d9e29e577345b
     home: https://github.com/mesosphere/traefik-forward-auth
     keywords:
     - traefik-forward-auth
@@ -108,4 +108,4 @@ entries:
     urls:
     - https://mhrabovcin.github.io/charts-test/traefik-forward-auth-0.2.7.tgz
     version: 0.2.7
-generated: "2019-10-25T12:04:31.461394+02:00"
+generated: "2019-10-25T12:27:44.928144+02:00"

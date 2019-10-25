@@ -11,7 +11,7 @@ metadata:
     "helm.sh/hook-delete-policy": "hook-succeeded,before-hook-creation"
   labels:
     chart: {{ template "traefik.chart" . }}
-    app: {{ template "traefik.name" . }}  
+    app: {{ template "traefik.name" . }}
 spec:
   template:
     metadata:
