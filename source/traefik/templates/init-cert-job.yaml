@@ -36,6 +36,6 @@ spec:
         - name: "TRAEFIK_INGRESS_CERTIFICATE_SECRET_NAME"
           value: "traefik-kubeaddons-certificate"
         - name: "TRAEFIK_KONVOY_ADDONS_CONFIG_MAP"
-          value: "konvoyaddons-kubeaddons"
+          value: "konvoyconfig-kubeaddons"
         - name: "TRAEFIK_CLUSTER_HOSTNAME_KEY"
           value: "clusterHostname"
