@@ -11,12 +11,10 @@ metadata:
     chart: {{ template "traefik.chart" . }}
     release: {{ .Release.Name | quote }}
     heritage: {{ .Release.Service | quote }}
+  {{- if .Values.deploymentAnnotations }}
   annotations:
-    # Watching this CM will trigger traefik init container that updates certificate
-    # object with new DNS names. That will cascade secret update which will trigger
-    # another reload.
-    configmap.reloader.stakater.com/reload: "konvoyconfig-{{ .Release.Namespace }}"
-    secret.reloader.stakater.com/reload: "traefik-kubeaddons-certificate"
+{{ toYaml .Values.deploymentAnnotations | indent 4 }}
+  {{- end }}
 spec:
   replicas: {{ default 1 .Values.replicas }}
   selector:
