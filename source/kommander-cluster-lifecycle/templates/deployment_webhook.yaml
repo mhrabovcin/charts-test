@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    prometheus.io/scrape: "true"
+  labels:
+    {{- include "kommander-cluster-lifecycle.commonLabels" . | nindent 4 }}
+    control-plane: {{ template "kommander-cluster-lifecycle.fullname" . }}-webhook
+  name: {{ template "kommander-cluster-lifecycle.fullname" . }}-webhook
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "kommander-cluster-lifecycle.commonSelectorLabels" . | nindent 6 }}
+      control-plane: {{ template "kommander-cluster-lifecycle.fullname" . }}-webhook
+  template:
+    metadata:
+      labels:
+        {{- include "kommander-cluster-lifecycle.commonSelectorLabels" . | nindent 8 }}
+        control-plane: {{ template "kommander-cluster-lifecycle.fullname" . }}-webhook
+    spec:
+      serviceAccountName: {{ template "kommander-cluster-lifecycle.fullname" . }}-webhook
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: webhook
+        image: "{{ .Values.webhook.image.repository }}:{{ .Values.webhook.image.tag | default $.Chart.AppVersion }}"
+        imagePullPolicy: "{{ .Values.webhook.image.pullPolicy }}"
+        args:
+        - --secure-port=8443
+        - --tls-cert-file=/certs/tls.crt
+        - --tls-private-key-file=/certs/tls.key
+        ports:
+        - containerPort: 8443
+          name: https
+          protocol: TCP
+        resources:
+          {{ with .Values.webhook.resources }}
+          {{- toYaml . | nindent 10 }}
+          {{- end }}
+        volumeMounts:
+        - mountPath: /certs
+          name: cert
+          readOnly: true
+      securityContext:
+        {{ with .Values.webhook.securityContext }}
+        {{- toYaml . | nindent 8}}
+        {{- end }}
+      volumes:
+      - name: cert
+        secret:
+          defaultMode: 420
+          secretName: {{ template "kommander-cluster-lifecycle.fullname" . }}-webhook-tls
