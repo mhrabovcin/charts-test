@@ -1,0 +1,88 @@
+image:
+  repository: mesosphere/kommander
+  tag: 1.145.6
+  pullPolicy: IfNotPresent
+replicas: 1
+logoutRedirectPath: /ops/landing
+clusterPollingInterval: 3000
+hostPollingInterval: 3000
+clusterPollingThrottleFactor: 1
+kubernetesVersionsSelection: '[{"kubernetesVersion":"1.15.4","konvoyVersion":"v1.3.0-kommander-beta3","kubeaddonsVersion":"kommander-beta3"},{"kubernetesVersion":"1.15.3","konvoyVersion":"v1.1.5","kubeaddonsVersion":"stable-1.15.3-4"}]'
+
+# Mode must be either production|konvoy
+mode: production
+
+displayName: Konvoy Cluster
+
+# Konvoy ui should NOT create the CRD if Kommander already did it
+createObservableClusterCRD: true
+
+extraInitContainers:
+
+resources:
+  requests:
+    memory: "256Mi"
+    cpu: "100m"
+  limits:
+    memory: "512Mi"
+    cpu: "2000m"
+
+readinessProbe:
+  initialDelaySeconds: 15
+  periodSeconds: 10
+livenessProbe:
+  initialDelaySeconds: 15
+  periodSeconds: 10
+  timeoutSeconds: 3
+
+### This must match the serviceName set in the ingress backend below
+service:
+  name: kommander
+
+ingress:
+  traefikFrontendRuleType: PathPrefixStrip
+  extraAnnotations:
+    traefik.ingress.kubernetes.io/priority: "1"
+    traefik.ingress.kubernetes.io/auth-type: forward
+    traefik.ingress.kubernetes.io/auth-url: http://traefik-forward-auth-kubeaddons.kubeaddons.svc.cluster.local:4181/
+    traefik.ingress.kubernetes.io/auth-response-headers: X-Forwarded-User
+  path: /ops/portal/kommander
+
+federate:
+  addons: true
+  clusteraddons: true
+  clusterrolebindings: true
+  customresourcedefinitions: true
+  roles: true
+  rolebindings: true
+
+
+  systemNamespace:
+    enable: true
+    name: kommander-system
+
+# This name must match the name of the kubefed dep
+# in order to override values.
+kubefed:
+  # set to false if you wish to run kommander without deploying kubefed (not recommended)
+  enabled: true
+  controllermanager:
+    # override value is necessary due to a "featureGates":interface {}(nil)... spec.featureGates in body must be of type array: "null"
+    # bug found
+    featureGates:
+      CrossClusterServiceDiscovery: "Disabled"
+      FederatedIngress: "Disabled"
+      PushReconciler: "Enabled"
+      SchedulerPreferences: "Disabled"
+
+kommander-cluster-lifecycle:
+  enabled: true
+
+  konvoy:
+    version: v1.1.5
+
+  certificates:
+    issuer:
+      name:
+      kind: Issuer
+      selfSigned: false
