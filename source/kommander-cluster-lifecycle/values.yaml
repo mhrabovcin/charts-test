@@ -92,6 +92,7 @@ certificates:
     selfSigned: false
 
 utilityApiserver:
+  allowUnofficialReleases: false
   image:
     repository: mesosphere/kommander-cluster-lifecycle-utility-apiserver
     tag: dev

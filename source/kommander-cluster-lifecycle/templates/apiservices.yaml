@@ -5,12 +5,12 @@ metadata:
     certmanager.k8s.io/inject-ca-from: {{ .Release.Namespace }}/{{ template "kommander-cluster-lifecycle.fullname" . }}-webhook-tls
   labels:
     {{- include "kommander-cluster-lifecycle.commonLabels" . | nindent 4 }}
-  name: v1alpha2.webhook.kommander.mesosphere.io
+  name: v1beta1.webhook.kommander.mesosphere.io
 spec:
   group: webhook.kommander.mesosphere.io
   groupPriorityMinimum: 1000
   service:
     name: {{ template "kommander-cluster-lifecycle.fullname" . }}-webhook
     namespace: {{ .Release.Namespace }}
-  version: v1alpha2
+  version: v1beta1
   versionPriority: 15

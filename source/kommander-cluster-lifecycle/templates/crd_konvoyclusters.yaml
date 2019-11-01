@@ -63,32 +63,33 @@ spec:
                 Kubernetes cluster options
               properties:
                 addons:
-                  properties:
-                    addonsList:
-                      description: AddonConfigs is the list of AddonConfig entries
-                      items:
-                        description: AddonConfig describes an addon to be installed
-                          on the cluster
-                        properties:
-                          enabled:
-                            type: boolean
-                          name:
-                            type: string
-                          values:
-                            type: string
-                        required:
-                        - enabled
-                        - name
-                        type: object
-                      type: array
-                    configRepository:
-                      type: string
-                    configVersion:
-                      type: string
-                  required:
-                  - configRepository
-                  - configVersion
-                  type: object
+                  items:
+                    properties:
+                      addonsList:
+                        description: AddonConfigs is the list of AddonConfig entries
+                        items:
+                          description: AddonConfig describes an addon to be installed
+                            on the cluster
+                          properties:
+                            enabled:
+                              type: boolean
+                            name:
+                              type: string
+                            values:
+                              type: string
+                          required:
+                          - enabled
+                          - name
+                          type: object
+                        type: array
+                      configRepository:
+                        type: string
+                      configVersion:
+                        type: string
+                    required:
+                    - configRepository
+                    type: object
+                  type: array
                 containerNetworking:
                   description: ContainerNetworking describes the CNI used by Kubernetes
                   properties:
@@ -99,12 +100,7 @@ spec:
                           type: string
                         version:
                           type: string
-                      required:
-                      - encapsulation
-                      - version
                       type: object
-                  required:
-                  - calico
                   type: object
                 containerRuntime:
                   description: ContainerRuntime describes the runtime used by the
@@ -130,12 +126,7 @@ spec:
                           type: object
                         version:
                           type: string
-                      required:
-                      - configData
-                      - version
                       type: object
-                  required:
-                  - containerd
                   type: object
                 imageRegistries:
                   items:
@@ -152,12 +143,6 @@ spec:
                         type: string
                       username:
                         type: string
-                    required:
-                    - auth
-                    - identityToken
-                    - password
-                    - server
-                    - username
                     type: object
                   type: array
                 kubernetes:
@@ -174,9 +159,6 @@ spec:
                           items:
                             type: string
                           type: array
-                      required:
-                      - disabled
-                      - enabled
                       type: object
                     cloudProvider:
                       description: CloudProvider describes the options passed to Kubernets
@@ -184,8 +166,6 @@ spec:
                       properties:
                         provider:
                           type: string
-                      required:
-                      - provider
                       type: object
                     controlPlane:
                       description: ControlPlane contains all control plane related
@@ -206,19 +186,12 @@ spec:
                           description: Keepalived describes different keepalived related
                             options
                           properties:
-                            enabled:
-                              type: boolean
                             interface:
                               type: string
                             vrid:
+                              format: int32
                               type: integer
-                          required:
-                          - enabled
                           type: object
-                      required:
-                      - certificate
-                      - controlPlaneEndpointOverride
-                      - keepalived
                       type: object
                     networking:
                       description: Networking describes different networking related
@@ -236,11 +209,6 @@ spec:
                           type: string
                         serviceSubnet:
                           type: string
-                      required:
-                      - httpProxy
-                      - httpsProxy
-                      - podSubnet
-                      - serviceSubnet
                       type: object
                     preflightChecks:
                       description: PreflightChecks describes the set of preflight
@@ -250,18 +218,9 @@ spec:
                           items:
                             type: string
                           type: array
-                      required:
-                      - errorsToIgnore
                       type: object
                     version:
                       type: string
-                  required:
-                  - admissionPlugins
-                  - cloudProvider
-                  - controlPlane
-                  - networking
-                  - preflightChecks
-                  - version
                   type: object
                 nodePools:
                   items:
@@ -275,12 +234,7 @@ spec:
                           nvidia:
                             description: Nvidia defines the user configuration of
                               Nvidia specific info
-                            properties:
-                              enabled:
-                                type: boolean
                             type: object
-                        required:
-                        - nvidia
                         type: object
                       labels:
                         items:
@@ -324,18 +278,9 @@ spec:
                   properties:
                     defaultRepositoryInstallationDisabled:
                       type: boolean
-                  required:
-                  - defaultRepositoryInstallationDisabled
                   type: object
                 version:
                   type: string
-              required:
-              - addons
-              - containerNetworking
-              - containerRuntime
-              - kubernetes
-              - packageRepository
-              - version
               type: object
             provisioner:
               description: ClusterProvisionerSpec is the spec that contains the provisioner
@@ -383,19 +328,21 @@ spec:
                     options
                   properties:
                     controlPlaneMappedPortBase:
+                      format: int32
                       type: integer
                     dedicatedNetwork:
                       type: boolean
                     disablePortMapping:
                       type: boolean
                     sshControlPlaneMappedPortBase:
+                      format: int32
                       type: integer
                     sshWorkerMappedPortBase:
+                      format: int32
                       type: integer
                   type: object
                 nodePools:
-                  description: AdminCIDRBlocks       []string               `json:"adminCIDRBlocks,omitempty"
-                    yaml:"adminCIDRBlocks,omitempty"`
+                  description: AdminCIDRBlocks       []string               `json:"adminCIDRBlocks,omitempty"`
                   items:
                     description: MachinePool used by the provisioner to configure
                       a machine
@@ -405,6 +352,7 @@ spec:
                       controlPlane:
                         type: boolean
                       count:
+                        format: int32
                         type: integer
                       machine:
                         description: Machine used by the provisioner to configure
@@ -438,10 +386,12 @@ spec:
                           imagefsVolumeEnabled:
                             type: boolean
                           imagefsVolumeSize:
+                            format: int64
                             type: integer
                           imagefsVolumeType:
                             type: string
                           rootVolumeSize:
+                            format: int64
                             type: integer
                           rootVolumeType:
                             type: string
@@ -452,6 +402,7 @@ spec:
                         type: string
                     required:
                     - count
+                    - name
                     type: object
                   type: array
                 provider:
@@ -466,10 +417,12 @@ spec:
                       type: string
                     user:
                       type: string
+                  required:
+                  - publicKeyFile
+                  - user
                   type: object
                 version:
-                  description: not being used right now InventoryPath   string           `json:"inventoryPath,omitempty"
-                    yaml:"inventoryPath,omitempty"`
+                  description: not being used right now InventoryPath   string           `json:"inventoryPath,omitempty"`
                   type: string
               required:
               - provider
@@ -497,9 +450,9 @@ spec:
               type: string
           type: object
       type: object
-  version: v1alpha2
+  version: v1beta1
   versions:
-  - name: v1alpha2
+  - name: v1beta1
     served: true
     storage: true
 status:

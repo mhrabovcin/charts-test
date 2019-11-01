@@ -3,9 +3,9 @@ entries:
   dex:
   - apiVersion: v1
     appVersion: 2.17.0
-    created: "2019-10-29T10:10:36.439826+01:00"
+    created: "2019-11-01T19:50:29.995449+01:00"
     description: CoreOS Dex
-    digest: 5fe3a4e1c9d408abac496ab3dda1e51d195bbc78057fddca89545f6bb06f68c4
+    digest: 5c366432152dd24cedf3d1f6549b3058ec02cb9f5d828209320cb001cc00d580
     home: https://github.com/dexidp/dex/
     icon: https://github.com/dexidp/dex/raw/master/Documentation/logos/dex-glyph-color.png
     keywords:
@@ -25,9 +25,9 @@ entries:
   dex-k8s-authenticator:
   - apiVersion: v1
     appVersion: v1.1.1
-    created: "2019-10-29T10:10:36.440897+01:00"
+    created: "2019-11-01T19:50:29.996849+01:00"
     description: Authenticator for using Dex with Kubernetes
-    digest: 3524dd148395c8716e503f6d17c2c69709a0eb202cf2350a3bd506a208858290
+    digest: 19cf603d15f23877ec12d0c9378f7fa900fa811a21d9e00c77004df827069773
     home: https://github.com/mesosphere/charts
     maintainers:
     - email: mhrabovcin.c@mesosphere.com
@@ -43,9 +43,9 @@ entries:
   kommander:
   - apiVersion: v1
     appVersion: 1.145.6
-    created: "2019-10-29T10:10:36.444174+01:00"
+    created: "2019-11-01T19:50:29.998496+01:00"
     description: Kommander
-    digest: 053b225f29ed0e86c020f994f4e11395c3d0149a02a811c2baa2caf598bc8989
+    digest: 429441dcc315135f365f11602c34a2393ce4c9f84910c5e4ac2f43f12b5271fa
     home: https://github.com/mesosphere/kommander
     maintainers:
     - name: hectorj2f
@@ -55,26 +55,12 @@ entries:
     urls:
     - https://mhrabovcin.github.io/charts-test/kommander-0.1.45.tgz
     version: 0.1.45
-  - apiVersion: v1
-    appVersion: 1.145.6
-    created: "2019-10-29T10:10:36.442413+01:00"
-    description: Kommander
-    digest: 9517d73cd8e810965d8e3566f6662338c911f8f5343fbfef9b1d7e297bcfaed9
-    home: https://github.com/mesosphere/kommander
-    maintainers:
-    - name: hectorj2f
-    - name: alejandroEsc
-    - name: jimmidyson
-    name: kommander
-    urls:
-    - https://mhrabovcin.github.io/charts-test/kommander-0.1.44.tgz
-    version: 0.1.44
   kommander-cluster-lifecycle:
   - apiVersion: v1
     appVersion: dev
-    created: "2019-10-29T10:10:36.446097+01:00"
+    created: "2019-11-01T19:50:29.999198+01:00"
     description: Kommander Cluster Lifecycle
-    digest: 974c4a297fdd758f9fdd9a267e2010ed5a97453fb77c04dd0c88dcfd8a6667fe
+    digest: cc9f201620a4106dc953f2dfc5beddabb5837fd8ba880957e56d61d0627f0667
     home: https://github.com/mesosphere/kommander-cluster-lifecycle
     maintainers:
     - name: jimmidyson
@@ -86,9 +72,9 @@ entries:
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.1.1
-    created: "2019-10-29T10:10:36.446716+01:00"
+    created: "2019-11-01T19:50:29.999669+01:00"
     description: A Helm chart for kube-oidc-proxy
-    digest: 7fb2b3b4750c16d0e97b49825068c027a2b2f054d0f6284484c786deadfe57ce
+    digest: 5382a677d790558c63b4628730cfc02e89ebeb78be7f04efd6af2f2c2a7e5095
     home: https://github.com/mesosphere/charts
     maintainers:
     - email: mhrabovcin.c@d2iq.com
@@ -104,10 +90,10 @@ entries:
   traefik:
   - apiVersion: v1
     appVersion: 1.7.12
-    created: "2019-10-29T10:10:36.447778+01:00"
+    created: "2019-11-01T19:50:30.000679+01:00"
     description: A Traefik based Kubernetes ingress controller with Let's Encrypt
       support
-    digest: 55371a5cb2e327ad56550cf75c656833fc8147783686be6f6fa0b2f9b32b2a97
+    digest: b052c569a9330a3779d4e8b28854853613e30da63395576e379176904b1e5362
     engine: gotpl
     home: https://traefik.io/
     icon: https://docs.traefik.io/img/traefik.logo.png
@@ -135,10 +121,10 @@ entries:
   traefik-forward-auth:
   - apiVersion: v1
     appVersion: latest
-    created: "2019-10-29T10:10:36.448124+01:00"
+    created: "2019-11-01T19:50:30.001037+01:00"
     description: Minimal forward authentication service that provides OIDC based login
       and authentication for the traefik reverse proxy
-    digest: 42456fdfbbc4dd3d33e07155236b6d312e6a346b95cf38340ac4cd7494e01951
+    digest: 7ff5416ebf6b3b6434c6462d59a4ceb062c84cd4e3b6869129908d90095524d8
     home: https://github.com/mesosphere/traefik-forward-auth
     keywords:
     - traefik-forward-auth
@@ -151,4 +137,4 @@ entries:
     urls:
     - https://mhrabovcin.github.io/charts-test/traefik-forward-auth-0.2.7.tgz
     version: 0.2.7
-generated: "2019-10-29T10:10:36.438757+01:00"
+generated: "2019-11-01T19:50:29.994187+01:00"

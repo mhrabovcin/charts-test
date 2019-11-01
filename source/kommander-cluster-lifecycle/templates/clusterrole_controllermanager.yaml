@@ -43,6 +43,7 @@ rules:
   - secrets
   - serviceaccounts
   - configmaps
+  - services
   verbs:
   - create
   - delete
@@ -127,6 +128,7 @@ rules:
   - federatedrolebindings
   - federatedclusterrolebindings
   - federatedclusterroles
+  - federatedaddons
   verbs:
   - create
   - delete

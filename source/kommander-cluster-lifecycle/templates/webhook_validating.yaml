@@ -12,14 +12,14 @@ webhooks:
       service:
         name: kubernetes
         namespace: default
-        path: /apis/webhook.kommander.mesosphere.io/v1alpha2/validations
+        path: /apis/webhook.kommander.mesosphere.io/v1beta1/validations
     failurePolicy: Fail
     name: webhook.kommander.mesosphere.io
     rules:
       - apiGroups:
           - kommander.mesosphere.io
         apiVersions:
-          - v1alpha2
+          - v1beta1
         operations:
           - CREATE
           - UPDATE
@@ -36,7 +36,7 @@ webhooks:
       - apiGroups:
           - kommander.mesosphere.io
         apiVersions:
-          - v1alpha2
+          - v1beta1
         operations:
           - CREATE
           - UPDATE
@@ -45,7 +45,7 @@ webhooks:
       - apiGroups:
           - kommander.mesosphere.io
         apiVersions:
-          - v1alpha2
+          - v1beta1
         operations:
           - CREATE
           - UPDATE
@@ -54,7 +54,7 @@ webhooks:
       - apiGroups:
           - kommander.mesosphere.io
         apiVersions:
-          - v1alpha2
+          - v1beta1
         operations:
           - CREATE
           - UPDATE
@@ -63,7 +63,7 @@ webhooks:
       - apiGroups:
           - kommander.mesosphere.io
         apiVersions:
-          - v1alpha2
+          - v1beta1
         operations:
           - UPDATE
         resources:
