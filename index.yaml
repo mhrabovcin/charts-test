@@ -3,9 +3,9 @@ entries:
   dex:
   - apiVersion: v1
     appVersion: 2.17.0
-    created: "2019-11-01T19:50:29.995449+01:00"
+    created: "2020-01-16T10:56:43.928733+01:00"
     description: CoreOS Dex
-    digest: 5c366432152dd24cedf3d1f6549b3058ec02cb9f5d828209320cb001cc00d580
+    digest: 5088a9216483949487f0ba7da7e27ab6d914ca6db38f077a3d8bf4c3759ae3bb
     home: https://github.com/dexidp/dex/
     icon: https://github.com/dexidp/dex/raw/master/Documentation/logos/dex-glyph-color.png
     keywords:
@@ -25,9 +25,9 @@ entries:
   dex-k8s-authenticator:
   - apiVersion: v1
     appVersion: v1.1.1
-    created: "2019-11-01T19:50:29.996849+01:00"
+    created: "2020-01-16T10:56:43.929245+01:00"
     description: Authenticator for using Dex with Kubernetes
-    digest: 19cf603d15f23877ec12d0c9378f7fa900fa811a21d9e00c77004df827069773
+    digest: 3e4fbd34490ea5050e5936456ea1faf6b988a4ad9c0d27ff485a76f8cb9aabd9
     home: https://github.com/mesosphere/charts
     maintainers:
     - email: mhrabovcin.c@mesosphere.com
@@ -43,9 +43,9 @@ entries:
   kommander:
   - apiVersion: v1
     appVersion: 1.145.6
-    created: "2019-11-01T19:50:29.998496+01:00"
+    created: "2020-01-16T10:56:43.930788+01:00"
     description: Kommander
-    digest: 429441dcc315135f365f11602c34a2393ce4c9f84910c5e4ac2f43f12b5271fa
+    digest: a8d6405c407403ee9ed211ab6199411238d9f026543cfa881f91b732e92acf7d
     home: https://github.com/mesosphere/kommander
     maintainers:
     - name: hectorj2f
@@ -58,9 +58,9 @@ entries:
   kommander-cluster-lifecycle:
   - apiVersion: v1
     appVersion: dev
-    created: "2019-11-01T19:50:29.999198+01:00"
+    created: "2020-01-16T10:56:43.931442+01:00"
     description: Kommander Cluster Lifecycle
-    digest: cc9f201620a4106dc953f2dfc5beddabb5837fd8ba880957e56d61d0627f0667
+    digest: 35ccf67e51641e7cb8f4c62899a920fdb8695d3427ed43b95a5d989bed97cab4
     home: https://github.com/mesosphere/kommander-cluster-lifecycle
     maintainers:
     - name: jimmidyson
@@ -72,9 +72,9 @@ entries:
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.1.1
-    created: "2019-11-01T19:50:29.999669+01:00"
+    created: "2020-01-16T10:56:43.9319+01:00"
     description: A Helm chart for kube-oidc-proxy
-    digest: 5382a677d790558c63b4628730cfc02e89ebeb78be7f04efd6af2f2c2a7e5095
+    digest: 6d49c1038fc8b64eb9eb64759ea595909f49a064e3a397c7a1443740726963a0
     home: https://github.com/mesosphere/charts
     maintainers:
     - email: mhrabovcin.c@d2iq.com
@@ -90,10 +90,10 @@ entries:
   traefik:
   - apiVersion: v1
     appVersion: 1.7.12
-    created: "2019-11-01T19:50:30.000679+01:00"
+    created: "2020-01-16T10:56:43.933923+01:00"
     description: A Traefik based Kubernetes ingress controller with Let's Encrypt
       support
-    digest: b052c569a9330a3779d4e8b28854853613e30da63395576e379176904b1e5362
+    digest: 81681c497714b34d7c6b7b35ac4b9f3f33c6c66464f80ff061b7ccc9263fd72e
     engine: gotpl
     home: https://traefik.io/
     icon: https://docs.traefik.io/img/traefik.logo.png
@@ -121,10 +121,10 @@ entries:
   traefik-forward-auth:
   - apiVersion: v1
     appVersion: latest
-    created: "2019-11-01T19:50:30.001037+01:00"
+    created: "2020-01-16T10:56:43.934382+01:00"
     description: Minimal forward authentication service that provides OIDC based login
       and authentication for the traefik reverse proxy
-    digest: 7ff5416ebf6b3b6434c6462d59a4ceb062c84cd4e3b6869129908d90095524d8
+    digest: ca3390484022a8708132857e3edead6aadc7bf65675995e752af22ce300d4376
     home: https://github.com/mesosphere/traefik-forward-auth
     keywords:
     - traefik-forward-auth
@@ -137,4 +137,28 @@ entries:
     urls:
     - https://mhrabovcin.github.io/charts-test/traefik-forward-auth-0.2.7.tgz
     version: 0.2.7
-generated: "2019-11-01T19:50:29.994187+01:00"
+  velero:
+  - apiVersion: v1
+    appVersion: 1.0.1
+    created: "2020-01-16T10:56:43.934961+01:00"
+    description: A Helm chart for velero
+    digest: a7f906845ff8f6dd9a1a6af5dcb4cee306b9082fcf6147ce27839626fec86de6
+    home: https://github.com/heptio/velero
+    icon: https://cdn-images-1.medium.com/max/1600/1*-9mb3AKnKdcL_QD3CMnthQ.png
+    maintainers:
+    - email: d-caruso@hotmail.it
+      name: domcar
+    - email: hfernandez@mesosphere.com
+      name: hectorj2f
+    - email: brubakern@vmware.com
+      name: nrb
+    - email: aadnan@vmware.com
+      name: prydonius
+    name: velero
+    sources:
+    - https://github.com/heptio/velero
+    tillerVersion: '>=2.10.0'
+    urls:
+    - https://mhrabovcin.github.io/charts-test/velero-2.2.11.tgz
+    version: 2.2.11
+generated: "2020-01-16T10:56:43.927441+01:00"
