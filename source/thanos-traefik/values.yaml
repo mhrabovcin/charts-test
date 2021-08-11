@@ -1,0 +1,29 @@
+# Default values for traefik-prometheus-thanos.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+nameOverride: ""
+fullnameOverride: ""
+
+# Setting this option to true will allow installing this chart and not creating
+# any configuration objects.
+disable: false
+
+route:
+  endpoints:
+    - web
+    - websecure
+
+  sni: server.thanos.localhost.localdomain
+
+  services:
+    - name: kube-prometheus-stack-prometheus
+      port: 10901
+
+  tls:
+    # Define the secret name that contains the server certificate that should
+    # be used for TLS termination by traefik
+    secretName: thanos-server-tls
+
+tlsoptions:
+  secretName: thanos-server-tls
