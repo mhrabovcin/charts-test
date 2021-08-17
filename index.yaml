@@ -3,12 +3,15 @@ entries:
   thanos-traefik:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-08-11T09:26:31.035734508+02:00"
+    created: "2021-08-17T10:40:26.128258386+02:00"
     description: A Helm chart for Kubernetes that exposes thanos GRPC service over traefik with mTLS termination
-    digest: 56074306dd89dd7f6fa1bf46faccb560bc4ad8eedaa7242236c6f67b7467eec2
+    digest: cdadfcc644828c210f8334fe1e5f4ce9390272d8b4a63ece44176392fe4ccf8e
+    maintainers:
+    - email: mhrabovcin.c@d2iq.com
+      name: mhrabovcin
     name: thanos-traefik
     type: application
     urls:
     - https://mhrabovcin.github.io/charts-test/thanos-traefik-0.0.1.tgz
     version: 0.0.1
-generated: "2021-08-11T09:26:31.03542419+02:00"
+generated: "2021-08-17T10:40:26.127917679+02:00"
