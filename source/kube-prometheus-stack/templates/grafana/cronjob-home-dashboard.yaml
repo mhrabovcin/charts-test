@@ -10,9 +10,6 @@ metadata:
   name: {{ .Release.Name }}-{{ .Values.mesosphereResources.homeDashboard.cronJob.name }}
 spec:
   schedule: "*/5 * * * *"
-  # Remove any containers that got possibly stuck and couldn't be launched
-  # properly.
-  concurrencyPolicy: Replace
   jobTemplate:
     spec:
       template:
