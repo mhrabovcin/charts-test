@@ -1,5 +1,21 @@
 apiVersion: v1
 entries:
+  dex-k8s-authenticator:
+  - apiVersion: v1
+    appVersion: v1.2.4
+    created: "2022-06-27T16:11:11.488643+02:00"
+    description: Authenticator for using Dex with Kubernetes
+    digest: 9ebd5dfe2c03fe0c7f1a854450060843acda2db51ccfec16677d1f120bf75006
+    home: https://github.com/mesosphere/charts
+    maintainers:
+    - email: mhrabovcin.c@d2iq.com
+      name: mhrabovcin
+    name: dex-k8s-authenticator
+    sources:
+    - https://github.com/mesosphere/dex-k8s-authenticator
+    urls:
+    - https://mhrabovcin.github.io/charts-test/dex-k8s-authenticator-1.2.11.tgz
+    version: 1.2.11
   kube-prometheus-stack:
   - annotations:
       artifacthub.io/links: |
@@ -10,7 +26,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.47.0
-    created: "2021-12-30T10:13:40.742229315+01:00"
+    created: "2022-06-27T16:11:11.513503+02:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -24,8 +40,11 @@ entries:
       name: grafana
       repository: https://grafana.github.io/helm-charts
       version: 6.8.*
-    description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.
-    digest: 9fe9b81d037867239de34b195a70138ca917f8aac2280eccd281d29c63b8dd14
+    description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
+      and Prometheus rules combined with documentation and scripts to provide easy
+      to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
+      Prometheus Operator.
+    digest: dcc1f1567f314a90d5cc9e2f87fbbcafdeb44bd71b911f467f94167a903ae362
     home: https://github.com/prometheus-operator/kube-prometheus
     icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
     keywords:
@@ -52,4 +71,4 @@ entries:
     urls:
     - https://mhrabovcin.github.io/charts-test/kube-prometheus-stack-15.4.9.tgz
     version: 15.4.9
-generated: "2021-12-30T10:13:40.725555212+01:00"
+generated: "2022-06-27T16:11:11.48682+02:00"
